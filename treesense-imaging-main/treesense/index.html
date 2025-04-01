@@ -6,62 +6,217 @@
   <meta name="description" content="Your solution for accurate tree enumeration">
   <title>TreeSense Imaging</title>
 
-  <!-- OG -->
-  <meta property="og:site_name" content="TreeSense Imaging">
-  <meta property="og:title" content="TreeSense Imaging">
-  <meta property="og:url" content="http://treesense.vipulchaturvedi.com/">
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="Your solution for accurate tree enumeration">
-  <meta property="og:image" content="https://i.imgur.com/43l43ve.png">
-  <!-- ... -->
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="http://treesense.vipulchaturvedi.com">
-  <meta name="twitter:title" content="TreeSense Imaging">
-  <meta name="twitter:description" content="Your solution for accurate tree enumeration">
-  <meta name="twitter:image:src" content="https://i.imgur.com/43l43ve.png">
-  <!-- ... -->
-
   <!-- Favicon -->
-  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700" type="text/css">
-  <link rel="stylesheet" href="/src/assets/css/styles.css">
-
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@3.9.3/dist/full.min.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            clifford: "#da373d",
-          },
-        },
-      },
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-  </script>
-
+    
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f3f4f6;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* Header styles */
+    header {
+      background-color: #3b82f6;
+      padding: 1rem 0;
+    }
+    
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .logo {
+      color: white;
+      font-size: 1.5rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    
+    .logo img {
+      width: 2rem;
+      height: 2rem;
+      margin-right: 0.5rem;
+    }
+    
+    /* Navigation */
+    .main-nav {
+      display: none;
+    }
+    
+    .main-nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 1rem;
+    }
+    
+    /* Mobile menu */
+    .mobile-menu-btn {
+      display: block;
+    }
+    
+    .hamburger-icon {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    
+    .hamburger-icon .bar {
+      width: 1.5rem;
+      height: 2px;
+      background-color: white;
+      margin: 3px 0;
+    }
+    
+    /* Main content */
+    main {
+      padding: 2rem 0;
+    }
+    
+    /* Hero section */
+    #hero {
+      background-color: #f3f4f6;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    #hero h1 {
+      font-size: 2.25rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    
+    #hero p {
+      color: #6b7280;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: #3b82f6;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.25rem;
+      text-decoration: none;
+      margin-top: 1rem;
+    }
+    
+    /* Stats section */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .stat-card {
+      background-color: white;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 0.5rem;
+    }
+    
+    .stat-card h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Panoramic section */
+    .panoramic-section {
+      padding: 2rem 0;
+    }
+    
+    .panoramic-section img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #e5e7eb;
+      padding: 1rem 0;
+    }
+    
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    footer p {
+      color: #6b7280;
+    }
+    
+    footer a {
+      color: #3b82f6;
+      text-decoration: none;
+      margin-left: 1rem;
+    }
+    
+    .footer-credit {
+      text-align: center;
+    }
+    
+    /* Responsive styles */
+    @media (min-width: 768px) {
+      .main-nav {
+        display: flex;
+      }
+      
+      .mobile-menu-btn {
+        display: none;
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-100 font-sans">
+<body>
 
   <!-- Header -->
-  <header class="bg-blue-500 py-4">
-    <div class="container mx-auto flex items-center justify-between">
-      <h1 class="text-white text-2xl font-semibold flex items-center">
-        <img src="/images/treeicon.png" class="w-8 h-8 mr-2" alt="TreeSense Imaging logo">
+  <header>
+    <div class="container header-content">
+      <a href="/" class="logo">
+        <img src="images/treeicon.png" alt="TreeSense Imaging logo">
         TreeSense Imaging
-      </h1>
-      <nav class="hidden md:flex space-x-4">
-        <a href="/about" class="text-white">About</a>
-        <a href="/features" class="text-white">Features</a>
+      </a>
+      <nav class="main-nav">
+        <a href="about">About</a>
+        <a href="features">Features</a>
       </nav>
-      <div class="md:hidden">
+      <div class="mobile-menu-btn">
         <!-- Mobile menu button -->
         <div class="hamburger-icon">
           <div class="bar"></div>
@@ -72,48 +227,49 @@
   </header>
 
   <!-- Main Content -->
-  <main class="container mx-auto py-8">
-
+  <main class="container">
     <!-- Hero Section -->
-    <section id="hero" class="bg-gray-100 p-8 text-center">
-      <h1 class="text-4xl font-bold mb-4">Your solution for accurate tree enumeration</h1>
-      <p class="text-gray-600">TreeSense is an open service for Tree Enumeration to provide access to visualizations or interactive interfaces that allow users to explore and interpret the results easily.</p>
-      <a href="/predict.html" class="block mx-auto mt-4 btn btn-primary">Get Started</a>
+    <section id="hero">
+      <h1>Your solution for accurate tree enumeration</h1>
+      <p>TreeSense is an open service for Tree Enumeration to provide access to visualizations or interactive interfaces that allow users to explore and interpret the results easily.</p>
+      <a href="predict.html" class="btn">Get Started</a>
     </section>
 
     <!-- Stats Section -->
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div class="bg-white p-4 text-center shadow-lg rounded-lg">
-        <h3 class="text-xl font-semibold mb-2">Efficient Image Processing</h3>
+    <section class="stats-grid">
+      <div class="stat-card">
+        <h3>Efficient Image Processing</h3>
       </div>
-      <div class="bg-white p-4 text-center shadow-lg rounded-lg">
-        <h3 class="text-xl font-semibold mb-2">Tree Species Categorization</h3>
+      <div class="stat-card">
+        <h3>Tree Species Categorization</h3>
       </div>
-      <div class="bg-white p-4 text-center shadow-lg rounded-lg">
-        <h3 class="text-xl font-semibold mb-2">Valuable Insights for Decision Making</h3>
+      <div class="stat-card">
+        <h3>Valuable Insights for Decision Making</h3>
       </div>
     </section>
 
     <!-- Panoramic Section -->
-    <section class="py-8">
-      <img src="/images/panaromic.png" alt="Panoramic view" class="mx-auto" />
+    <section class="panoramic-section">
+      <img src="images/panaromic.png" alt="Panoramic view">
     </section>
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-200 py-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <p class="text-gray-600">&copy; 2023 Treesense Imaging</p>
-      <div class="space-x-4">
-        <a href="mailto:vipulchaturvedi.com@gmail.com" class="text-blue-500">Contact</a>
-        <a href="/legal" class="text-blue-500">Terms</a>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2023 Treesense Imaging</p>
+        <div>
+          <a href="mailto:ilovemithi1076@gmail.com">Contact</a>
+          <a href="legal">Terms</a>
+        </div>
+      </div>
+      <div class="footer-credit">
+        <p>Made with &#9829; by <a href="/about#team" title="Meet Our Team">Our Team</a>.</p>
       </div>
     </div>
-    <div class="container mx-auto text-center">
-      <p class="text-gray-600">Made with &#9829; by <a href="/about#team" class="text-blue-500" title="Meet Our Team">Our Team</a>.</p>
-    </div>
   </footer>
-  <script src="/src/assets/js/scripts.js" async></script> 
+  <script src="src/assets/js/scripts.js" async></script> 
 
 </body>
 </html>
